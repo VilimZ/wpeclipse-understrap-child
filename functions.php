@@ -87,3 +87,14 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+
+function wp_eclipse_register_footer_menus() {
+	register_nav_menus(
+	  array(
+			'footer-menu' => __( 'Footer Menu' ),
+			'container_class' => 'wpe_footer_container'
+	   )
+	 );
+   }
+   add_action( 'init', 'wp_eclipse_register_footer_menus' );
